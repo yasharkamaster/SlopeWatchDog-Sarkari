@@ -1,0 +1,304 @@
+/**
+ * Rockfall AI Monitoring System - Design System
+ * Created by: Yasharka Bhattacharyya
+ * Copyright © 2025 Yasharka Bhattacharyya. All rights reserved.
+ * 
+ * This design system is proprietary and developed exclusively by Yasharka Bhattacharyya.
+ * Unauthorized use, reproduction, or distribution is strictly prohibited.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Pure Black & White Industrial Design System */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 3%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 0% 100%;
+    --destructive-foreground: 0 0% 0%;
+
+    --success: 0 0% 100%;
+    --success-foreground: 0 0% 0%;
+
+    --warning: 0 0% 100%;
+    --warning-foreground: 0 0% 0%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 100%;
+
+    --radius: 0rem;
+
+    /* Industrial Grid System */
+    --grid-primary: 0 0% 15%;
+    --grid-secondary: 0 0% 8%;
+
+    /* Data Display Colors */
+    --data-high: 0 0% 100%;
+    --data-medium: 0 0% 70%;
+    --data-low: 0 0% 40%;
+
+    /* Status Colors with Rockfall Theme */
+    --status-critical: 0 84% 60%;      /* Red for high risk */
+    --status-warning: 45 93% 58%;      /* Amber for medium risk */
+    --status-normal: 142 76% 36%;      /* Green for low risk */
+    --status-inactive: 0 0% 30%;       /* Gray for inactive */
+    
+    /* Rockfall Monitoring Accent Colors */
+    --accent-danger: 0 84% 60%;        /* Red - Critical alerts */
+    --accent-warning: 45 93% 58%;      /* Amber - Warnings */
+    --accent-success: 142 76% 36%;    /* Green - Safe conditions */
+    --accent-info: 199 89% 48%;        /* Blue - Information */
+    --accent-purple: 262 83% 58%;      /* Purple - System status */
+    --accent-orange: 25 95% 53%;       /* Orange - Maintenance */
+    
+    /* Geological Theme Colors */
+    --geo-red: 0 84% 60%;              /* Red rock */
+    --geo-brown: 30 59% 45%;           /* Brown earth */
+    --geo-gray: 0 0% 50%;              /* Gray stone */
+    --geo-blue: 199 89% 48%;           /* Blue water */
+    --geo-green: 142 76% 36%;          /* Green vegetation */
+    
+      /* Sensor Data Colors */
+      --sensor-temp: 0 84% 60%;          /* Red for temperature */
+      --sensor-humidity: 199 89% 48%;    /* Blue for humidity */
+      --sensor-vibration: 45 93% 58%;    /* Amber for vibration */
+      --sensor-pressure: 262 83% 58%;    /* Purple for pressure */
+
+      --dev-watermark: "Yasharka Bhattacharyya - Rockfall AI System Developer";
+      --copyright-notice: "© 2025 Yasharka Bhattacharyya. All rights reserved.";
+      --wm-1: "WWFzaGFya2EgQmhhdHRhY2hhcnl5YQ=="; /* Yasharka Bhattacharyya */
+      --wm-2: "Q29weXJpZ2h0IDIwMjUgWWFzaGFya2EgQmhhdHRhY2hhcnl5YQ=="; /* Copyright 2025 Yasharka Bhattacharyya */
+      --wm-3: "Um9ja2ZhbGwgQUkgRGV2ZWxvcGVy"; /* Rockfall AI Developer */
+      --wm-4: "UHJvcHJpZXRhcnkgU29mdHdhcmU="; /* Proprietary Software */
+      
+      /* Hex Encoded Watermarks */
+      --hex-wm-1: "5961736861726B612042686174746163686172797961"; /* Yasharka Bhattacharyya */
+      --hex-wm-2: "32303235205961736861726B612042686174746163686172797961"; /* 2025 Yasharka Bhattacharyya */
+      
+      /* ROT13 Encoded Watermarks */
+      --rot13-wm: "Lnfunexn Ongggnpunel"; /* Yasharka Bhattacharyya */
+      
+      /* Caesar Cipher (Shift +3) */
+      --caesar-wm: "Bdvkdund Fkdwwdfkdub"; /* Yasharka Bhattacharyya */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Accent Color Utilities */
+  .text-accent-danger { color: hsl(var(--accent-danger)); }
+  .text-accent-warning { color: hsl(var(--accent-warning)); }
+  .text-accent-success { color: hsl(var(--accent-success)); }
+  .text-accent-info { color: hsl(var(--accent-info)); }
+  .text-accent-purple { color: hsl(var(--accent-purple)); }
+  .text-accent-orange { color: hsl(var(--accent-orange)); }
+  
+  .bg-accent-danger { background-color: hsl(var(--accent-danger)); }
+  .bg-accent-warning { background-color: hsl(var(--accent-warning)); }
+  .bg-accent-success { background-color: hsl(var(--accent-success)); }
+  .bg-accent-info { background-color: hsl(var(--accent-info)); }
+  .bg-accent-purple { background-color: hsl(var(--accent-purple)); }
+  .bg-accent-orange { background-color: hsl(var(--accent-orange)); }
+  
+  .border-accent-danger { border-color: hsl(var(--accent-danger)); }
+  .border-accent-warning { border-color: hsl(var(--accent-warning)); }
+  .border-accent-success { border-color: hsl(var(--accent-success)); }
+  .border-accent-info { border-color: hsl(var(--accent-info)); }
+  .border-accent-purple { border-color: hsl(var(--accent-purple)); }
+  .border-accent-orange { border-color: hsl(var(--accent-orange)); }
+  
+  /* Geological Theme Utilities */
+  .text-geo-red { color: hsl(var(--geo-red)); }
+  .text-geo-brown { color: hsl(var(--geo-brown)); }
+  .text-geo-gray { color: hsl(var(--geo-gray)); }
+  .text-geo-blue { color: hsl(var(--geo-blue)); }
+  .text-geo-green { color: hsl(var(--geo-green)); }
+  
+  .bg-geo-red { background-color: hsl(var(--geo-red)); }
+  .bg-geo-brown { background-color: hsl(var(--geo-brown)); }
+  .bg-geo-gray { background-color: hsl(var(--geo-gray)); }
+  .bg-geo-blue { background-color: hsl(var(--geo-blue)); }
+  .bg-geo-green { background-color: hsl(var(--geo-green)); }
+  
+  /* Sensor Data Utilities */
+  .text-sensor-temp { color: hsl(var(--sensor-temp)); }
+  .text-sensor-humidity { color: hsl(var(--sensor-humidity)); }
+  .text-sensor-vibration { color: hsl(var(--sensor-vibration)); }
+  .text-sensor-pressure { color: hsl(var(--sensor-pressure)); }
+  
+  .bg-sensor-temp { background-color: hsl(var(--sensor-temp)); }
+  .bg-sensor-humidity { background-color: hsl(var(--sensor-humidity)); }
+  .bg-sensor-vibration { background-color: hsl(var(--sensor-vibration)); }
+  .bg-sensor-pressure { background-color: hsl(var(--sensor-pressure)); }
+  
+  /* Accent Background with Opacity */
+  .bg-accent-danger\/10 { background-color: hsl(var(--accent-danger) / 0.1); }
+  .bg-accent-warning\/10 { background-color: hsl(var(--accent-warning) / 0.1); }
+  .bg-accent-success\/10 { background-color: hsl(var(--accent-success) / 0.1); }
+  .bg-accent-info\/10 { background-color: hsl(var(--accent-info) / 0.1); }
+  .bg-accent-purple\/10 { background-color: hsl(var(--accent-purple) / 0.1); }
+  .bg-accent-orange\/10 { background-color: hsl(var(--accent-orange) / 0.1); }
+  
+  .border-accent-danger\/20 { border-color: hsl(var(--accent-danger) / 0.2); }
+  .border-accent-warning\/20 { border-color: hsl(var(--accent-warning) / 0.2); }
+  .border-accent-success\/20 { border-color: hsl(var(--accent-success) / 0.2); }
+  .border-accent-info\/20 { border-color: hsl(var(--accent-info) / 0.2); }
+  .border-accent-purple\/20 { border-color: hsl(var(--accent-purple) / 0.2); }
+  .border-accent-orange\/20 { border-color: hsl(var(--accent-orange) / 0.2); }
+
+  /* Scrollbar Hide Utility */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+  }
+
+  /* Subtle Visual Watermarks - Only visible on close inspection */
+  .watermark-yb {
+    position: relative;
+  }
+  .watermark-yb::before {
+    content: "YB";
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 6px;
+    font-family: monospace;
+    color: rgba(255, 255, 255, 0.03);
+    pointer-events: none;
+    z-index: 9999;
+    user-select: none;
+  }
+  
+  .watermark-yb-alt::after {
+    content: "©2025YB";
+    position: absolute;
+    bottom: 1px;
+    left: 1px;
+    font-size: 4px;
+    font-family: monospace;
+    color: rgba(255, 255, 255, 0.02);
+    pointer-events: none;
+    z-index: 9999;
+    user-select: none;
+  }
+
+  /* Micro watermark in borders */
+  .micro-watermark {
+    border-image: linear-gradient(45deg, transparent 98%, rgba(255,255,255,0.01) 99%, transparent 100%) 1;
+  }
+
+  /* Hidden text watermark */
+  .hidden-watermark {
+    background-image: 
+      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.005) 1px, transparent 1px),
+      radial-gradient(circle at 80% 80%, rgba(255,255,255,0.005) 1px, transparent 1px);
+    background-size: 100px 100px;
+    background-position: 0 0, 50px 50px;
+  }
+
+  /* Advanced Obfuscated Watermarks */
+  .obfuscated-wm-1::before {
+    content: attr(data-wm1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1px;
+    color: transparent;
+    opacity: 0.001;
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  .obfuscated-wm-2::after {
+    content: attr(data-wm2);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 1px;
+    color: transparent;
+    opacity: 0.001;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* Steganographic Watermarks */
+  .stego-wm {
+    background: linear-gradient(
+      45deg,
+      transparent 0%,
+      rgba(255,255,255,0.001) 0.1%,
+      transparent 0.2%,
+      rgba(255,255,255,0.001) 0.3%,
+      transparent 0.4%
+    );
+  }
+
+  /* Binary Pattern Watermarks */
+  .binary-wm {
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 1px,
+        rgba(255,255,255,0.002) 1px,
+        rgba(255,255,255,0.002) 2px
+      );
+  }
+
+  /* Self-Healing Watermark System */
+  .self-healing-wm {
+    position: relative;
+  }
+  .self-healing-wm::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 10% 10%, rgba(255,255,255,0.001) 0.5px, transparent 0.5px),
+      radial-gradient(circle at 90% 90%, rgba(255,255,255,0.001) 0.5px, transparent 0.5px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
